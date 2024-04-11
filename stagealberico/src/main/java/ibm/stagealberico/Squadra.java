@@ -21,8 +21,9 @@ public class Squadra {
 	}
 	
 	public void stampaSquadra() {
+		int index= 1;
 		for(Artista a1 : squadra) {
-			System.out.println(a1.getNome() +" " + a1.getCognome());
+			System.out.println(index++ + " " + a1.getNome() +" " + a1.getCognome());
 		}
 	}
 	
@@ -30,6 +31,14 @@ public class Squadra {
 		for(Artista a1 : squadra) {
 			System.out.println(a1.getNome() +" " + a1.getCognome() + " . Votazione finale: " + a1.getScore());
 		}
+	}
+	
+	public int calcolaVotazioneFinale() {
+		int vot=0;
+		for (Artista a1 : squadra) {
+			vot += a1.getScore();
+		}
+		return vot;
 	}
 	
 	public List<Artista> getArtisti(){
