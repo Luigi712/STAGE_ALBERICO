@@ -26,9 +26,7 @@ public class BusinessLogic {
 		        	aggiungiArtisti(squadraUtente, elenco);
 		        	}
 		        	
-		        	
-		        
-		        
+
 		        else if(scelta == 2) {
 		        	System.out.println("Scrivi il codice dell'artista da rimuovere: ");
 		        	int membroRimosso = App.sc.nextInt();

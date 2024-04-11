@@ -46,8 +46,9 @@ public class App
 	        System.out.println("Elenco Artisti: ");
 	        elenco.printIndex();
 	        
+	        System.out.println("Seleziona il nome della tua squadra: ");
 	        
-	        Squadra squadraUtente = new Squadra("nome prova");
+	        Squadra squadraUtente = new Squadra(sc.nextLine());
 	        BusinessLogic.modListaUtente(squadraUtente, elenco);
 	        System.out.println("Digita 1 per uscire, 2 per inserire un altro utente");
 	        int cond2= sc.nextInt();
@@ -64,7 +65,8 @@ public class App
     	System.out.println("RISULTATI FINALI");
     	for(int i=0;i<utenti.size();i++) {
     		
-    		System.out.println(utenti.get(i).getNomeUtente());
+    		System.out.println("Giocatore: " + utenti.get(i).getNomeUtente());
+    		System.out.println("Nome Squadra Giocatore: " + squadre.get(i).getNomeSquadra());
     		squadre.get(i).stampaSquadraClassifica();
     		int vot=squadre.get(i).calcolaVotazioneFinale();
     		System.out.println("VOTAZIONE COMPLESSIVA: " + vot);
