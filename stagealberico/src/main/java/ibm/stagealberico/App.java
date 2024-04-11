@@ -36,9 +36,7 @@ public class App
         System.out.println("Elenco Artisti: ");
         elenco.printIndex();
         
-        
         Squadra squadraUtente = new Squadra("nome prova");
-        
         
         boolean running = true;
         while(running) {
