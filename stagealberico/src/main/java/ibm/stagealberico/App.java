@@ -10,6 +10,7 @@ public class App
         Scanner sc = new Scanner(System.in);
         
         //registrazione
+        System.out.println((int) (Math.random()*100));
         System.out.println("Inserisci il nome utente: ");
         String nome= sc.nextLine();
         System.out.println("Inserisci la password");
@@ -79,7 +80,10 @@ public class App
     }
     
     }
+    
     sc.close();
+    //dopo aver selezionato la squadra, viene stampata la classifica con i voti
+    squadraUtente.stampaSquadraClassifica();
     
     }
     

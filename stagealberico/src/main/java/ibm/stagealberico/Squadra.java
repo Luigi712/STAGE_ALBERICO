@@ -11,9 +11,11 @@ public class Squadra {
 		this.nomeSquadra = nomeSquadra;
 		this.squadra = new ArrayList<Artista>();
 	}
+	
 	public void aggiungiArtista(Artista a1) {
 		squadra.add(a1);
 	}
+	
 	public void rimuoviArtista(int index){
 		squadra.remove(index);
 	}
@@ -21,6 +23,12 @@ public class Squadra {
 	public void stampaSquadra() {
 		for(Artista a1 : squadra) {
 			System.out.println(a1.getNome() +" " + a1.getCognome());
+		}
+	}
+	
+	public void stampaSquadraClassifica() {
+		for(Artista a1 : squadra) {
+			System.out.println(a1.getNome() +" " + a1.getCognome() + " . Votazione finale: " + a1.getScore());
 		}
 	}
 	

@@ -8,6 +8,11 @@ public class Artista {
 	private String titoloCanzone;
 	private String capitano;
 	private GenereMusicale genere;
+	Score sc1 = new Score();
+	
+	public int getScore() {
+		return sc1.getScore();
+	}
 	
 	
 	public Artista(String nome, String cognome, String titoloCanzone, String capitano, GenereMusicale genere) {
@@ -16,6 +21,7 @@ public class Artista {
 		this.titoloCanzone = titoloCanzone;
 		this.capitano = capitano;
 		this.genere = genere;
+		sc1 = new Score();
 	}
 	public GenereMusicale getGenere() {
 		return genere;
