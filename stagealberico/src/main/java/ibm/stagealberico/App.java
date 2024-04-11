@@ -7,7 +7,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
+        Scanner sc = ScannerSingleton.getInstance();
         
         //registrazione
         System.out.println("Inserisci il nome utente: ");
@@ -15,8 +16,7 @@ public class App
         System.out.println("Inserisci la password");
         String pass = sc.nextLine();
         Utente u1 = BusinessLogic.registraUtente(nome,pass);
-        
-        
+         
         //Instanzio gli artisti 
         Squadra elenco = new Squadra("elenco artisti");
         Artista a1= new Artista("Adriano","Celentano","l'emozione non ha voce","Gianni Morandi",GenereMusicale.POP);
@@ -46,39 +46,30 @@ public class App
         		
         		System.out.println("La tua squadra è la seguente: ");
     	        squadraUtente.stampaSquadra();
-        		
 	        	System.out.println("digita 1 per aggiungere artisti alla tua squadra - 2 per eliminarli - 3 per uscire");
 	        	int scelta = sc.nextInt();
+	        	
 		        if(scelta==1) {
-		        	
-		        	
 		        	aggiungiArtisti(squadraUtente,sc, elenco);
 		        	}
-		        	
-		        	
-		        
-		        
+		        	    
 		        else if(scelta == 2) {
 		        	System.out.println("Scrivi il codice dell'artista da rimuovere: ");
 		        	int membroRimosso = sc.nextInt();
 		        	squadraUtente.rimuoviArtista(membroRimosso);
-		        }
+		            }
+		        
 		        else if(scelta == 3) {
-		 	        	running = false;
+		 	        running = false;
 		 	        }
+		        
 		 	    else {
-		 	        	System.out.println("L'input inserito non è valido");
+		 	        System.out.println("L'input inserito non è valido");
 		 	        }
 	        }catch (IndexOutOfBoundsException e) {
-        		System.out.println("Il codice inserito non è associato a nessun artista");
-        	
-	       
-	        
-	        
-	        
-    }
-    
-    }
+        		System.out.println("Il codice inserito non è associato a nessun artista");	        
+	        } 
+      }
     sc.close();
     
     }
@@ -99,8 +90,7 @@ public class App
     		
     		squadraUtente.aggiungiArtista(elenco.returnElement(membro));
     		
-    		}
-    			
+    		}	
     	}
     }
 }
